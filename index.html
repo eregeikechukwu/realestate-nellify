@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURA | Prime Real Estate & Private Advisory</title>
+  
+  <!-- Google Fonts: Playfair Display (Luxury serif) & Plus Jakarta Sans (Clean modern body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              charcoal: '#0F1115',
+              sand: '#F7F5F0',
+              accent: '#C5A880',
+              muted: '#71717A'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1, h2, h3, .font-luxury { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="bg-brand-sand text-brand-charcoal antialiased selection:bg-brand-accent selection:text-white">
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="bg-brand-charcoal text-zinc-400 text-xs py-2 px-6 border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <span>Private Advisory & Exclusive Listings in New York, London & Zurich</span>
+      <div class="flex items-center gap-6">
+        <a href="tel:+18005550199" class="hover:text-white transition flex items-center gap-1.5">
+          <i data-lucide="phone" class="w-3 h-3 text-brand-accent"></i> +1 (800) 555-0199
+        </a>
+        <a href="#valuation" class="hover:text-white transition hidden sm:inline">Request Valuation</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-zinc-200">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Brand Logo (Easily customized) -->
+      <a href="#" class="flex items-center gap-2">
+        <span class="text-2xl font-semibold tracking-widest font-luxury text-brand-charcoal uppercase">AURA</span>
+        <span class="text-[10px] tracking-widest uppercase text-brand-accent font-medium mt-1">Estates</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-zinc-600">
+        <a href="#properties" class="hover:text-brand-charcoal transition">Exclusive Listings</a>
+        <a href="#neighborhoods" class="hover:text-brand-charcoal transition">Neighborhoods</a>
+        <a href="#about" class="hover:text-brand-charcoal transition">The Agency</a>
+        <a href="#valuation" class="hover:text-brand-charcoal transition">Sell With Us</a>
+      </nav>~
+
+      <!-- Action Button -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#contact" class="px-5 py-2.5 bg-brand-charcoal text-white text-xs font-semibold uppercase tracking-wider hover:bg-brand-accent transition duration-300">
+          Book Private Tour
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobileMenuBtn" class="md:hidden text-brand-charcoal p-2 focus:outline-none">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-zinc-200 px-6 py-6 space-y-4">
+      <a href="#properties" class="block text-base text-zinc-800">Exclusive Listings</a>
+      <a href="#neighborhoods" class="block text-base text-zinc-800">Neighborhoods</a>
+      <a href="#about" class="block text-base text-zinc-800">The Agency</a>
+      <a href="#valuation" class="block text-base text-zinc-800">Sell With Us</a>
+      <a href="#contact" class="block text-center w-full py-3 bg-brand-charcoal text-white text-xs uppercase tracking-wider font-semibold">
+        Book Private Tour
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative min-h-[85vh] flex items-center justify-center bg-zinc-900 overflow-hidden">
+    <!-- Hero Background Image (Unsplash architecture) -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" 
+        alt="Modern Luxury Residence" 
+        class="w-full h-full object-cover opacity-60"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/60"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white py-20">
+      <p class="text-xs md:text-sm uppercase tracking-[0.3em] text-brand-accent mb-4 font-semibold">
+        Architectural Distinction &bull; Prime Real Estate
+      </p>
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-luxury font-normal leading-tight tracking-tight mb-6">
+        Curating homes for the <br class="hidden sm:inline"/> extraordinary collector.
+      </h1>
+      <p class="max-w-2xl mx-auto text-sm sm:text-base text-zinc-300 font-light leading-relaxed mb-10">
+        Specializing in premier properties, architectural marvels, and discreet off-market transactions across the globe.
+      </p>
+
+      <!-- Search & Filter Floating Card -->
+      <div class="bg-white/95 backdrop-blur-md p-4 sm:p-6 rounded-none shadow-2xl max-w-4xl mx-auto text-left border border-white/20">
+        <form id="heroSearchForm" class="grid grid-cols-1 sm:grid-cols-4 gap-4 items-end">
+          <div>
+            <label class="block text-[11px] font-semibold uppercase tracking-wider text-zinc-500 mb-1">Location</label>
+            <select id="locationSelect" class="w-full bg-zinc-100 border border-zinc-300 px-3 py-2.5 text-xs text-zinc-800 focus:outline-none focus:border-brand-charcoal">
+              <option value="all">All Locations</option>
+              <option value="Manhattan, NY">Manhattan, NY</option>
+              <option value="Aspen, CO">Aspen, CO</option>
+              <option value="Miami Beach, FL">Miami Beach, FL</option>
+              <option value="Beverly Hills, CA">Beverly Hills, CA</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-semibold uppercase tracking-wider text-zinc-500 mb-1">Property Type</label>
+            <select id="typeSelect" class="w-full bg-zinc-100 border border-zinc-300 px-3 py-2.5 text-xs text-zinc-800 focus:outline-none focus:border-brand-charcoal">
+              <option value="all">All Categories</option>
+              <option value="Penthouse">Penthouse</option>
+              <option value="Villa">Villa / Estate</option>
+              <option value="Townhouse">Townhouse</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-semibold uppercase tracking-wider text-zinc-500 mb-1">Price Range</label>
+            <select class="w-full bg-zinc-100 border border-zinc-300 px-3 py-2.5 text-xs text-zinc-800 focus:outline-none focus:border-brand-charcoal">
+              <option>$2M - $5M</option>
+              <option>$5M - $12M</option>
+              <option>$12M - $25M</option>
+              <option>$25M+</option>
+            </select>
+          </div>
+
+          <div>
+            <button type="submit" class="w-full bg-brand-charcoal text-white hover:bg-brand-accent transition py-3 text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2">
+              <i data-lucide="search" class="w-4 h-4"></i> Search
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST STATS ================= -->
+  <section class="py-12 bg-white border-b border-zinc-200">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <p class="text-3xl sm:text-4xl font-luxury text-brand-charcoal mb-1">$1.4B+</p>
+        <p class="text-xs uppercase tracking-wider text-zinc-500">Volume Sold</p>
+      </div>
+      <div>
+        <p class="text-3xl sm:text-4xl font-luxury text-brand-charcoal mb-1">14 Days</p>
+        <p class="text-xs uppercase tracking-wider text-zinc-500">Average Days to Offer</p>
+      </div>
+      <div>
+        <p class="text-3xl sm:text-4xl font-luxury text-brand-charcoal mb-1">98.4%</p>
+        <p class="text-xs uppercase tracking-wider text-zinc-500">List-to-Sale Ratio</p>
+      </div>
+      <div>
+        <p class="text-3xl sm:text-4xl font-luxury text-brand-charcoal mb-1">320+</p>
+        <p class="text-xs uppercase tracking-wider text-zinc-500">High-Net-Worth Clients</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED PROPERTIES ================= -->
+  <section id="properties" class="py-24 max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="text-xs uppercase tracking-[0.25em] text-brand-accent font-semibold">The Portfolio</span>
+        <h2 class="text-3xl sm:text-5xl font-luxury mt-2">Featured Residences</h2>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="filterContainer">
+        <button data-filter="all" class="filter-btn active px-4 py-2 text-xs uppercase tracking-widest border border-brand-charcoal bg-brand-charcoal text-white transition">All</button>
+        <button data-filter="sale" class="filter-btn px-4 py-2 text-xs uppercase tracking-widest border border-zinc-300 bg-white text-zinc-700 hover:border-brand-charcoal transition">For Sale</button>
+        <button data-filter="rent" class="filter-btn px-4 py-2 text-xs uppercase tracking-widest border border-zinc-300 bg-white text-zinc-700 hover:border-brand-charcoal transition">For Lease</button>
+        <button data-filter="penthouse" class="filter-btn px-4 py-2 text-xs uppercase tracking-widest border border-zinc-300 bg-white text-zinc-700 hover:border-brand-charcoal transition">Penthouse</button>
+      </div>
+    </div>
+
+    <!-- Cards Grid (Populated dynamically via JS) -->
+    <div id="listingsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Injected via JavaScript -->
+    </div>
+  </section>
+
+  <!-- ================= VALUATION / LEAD MAGNET (HIGH CONVERSION) ================= -->
+  <section id="valuation" class="py-20 bg-brand-charcoal text-white relative">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="text-xs uppercase tracking-widest text-brand-accent font-medium">Selling Your Property</span>
+      <h2 class="text-3xl sm:text-4xl font-luxury mt-3 mb-4">Request a Confidential Market Valuation</h2>
+      <p class="text-zinc-400 text-sm max-w-xl mx-auto mb-8 font-light leading-relaxed">
+        Our proprietary analytical models and global buyer database deliver precise, complimentary valuation assessments for ultra-prime residential real estate.
+      </p>
+
+      <form id="valuationForm" class="bg-zinc-900/80 p-6 sm:p-8 border border-zinc-800 text-left max-w-2xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-zinc-400 mb-1">Full Name</label>
+            <input required type="text" placeholder="Lord / Lady / Mr. John Doe" class="w-full bg-zinc-800/80 border border-zinc-700 px-4 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-brand-accent" />
+          </div>
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-zinc-400 mb-1">Email Address</label>
+            <input required type="email" placeholder="john@example.com" class="w-full bg-zinc-800/80 border border-zinc-700 px-4 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-brand-accent" />
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-[11px] uppercase tracking-wider text-zinc-400 mb-1">Property Address & Specifications</label>
+          <input required type="text" placeholder="e.g. 740 Park Avenue, Penthouse B" class="w-full bg-zinc-800/80 border border-zinc-700 px-4 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-brand-accent" />
+        </div>
+
+        <button type="submit" class="w-full bg-brand-accent hover:bg-white hover:text-brand-charcoal transition text-white py-3 text-xs uppercase tracking-widest font-semibold">
+          Submit For Private Appraisal
+        </button>
+        <p id="valuationSuccess" class="hidden text-emerald-400 text-xs text-center mt-3">Thank you. An advisory partner will contact you discreetly within 24 hours.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT THE BROKER / AGENCY ================= -->
+  <section id="about" class="py-24 max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <img 
+          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop" 
+          alt="Luxury Architecture Interior" 
+          class="w-full h-[520px] object-cover"
+        />
+        <div class="absolute -bottom-6 -right-6 bg-white p-6 shadow-xl border border-zinc-200 hidden sm:block">
+          <p class="font-luxury text-2xl font-bold text-brand-charcoal">25+ Years</p>
+          <p class="text-xs uppercase tracking-wider text-zinc-500">Of Prime Advisory</p>
+        </div>
+      </div>
+
+      <div>
+        <span class="text-xs uppercase tracking-widest text-brand-accent font-semibold">The Standard</span>
+        <h2 class="text-3xl sm:text-4xl font-luxury mt-2 mb-6">Discretion. Unrivaled Reach. Architectural Expertise.</h2>
+        <p class="text-zinc-600 text-sm leading-relaxed mb-6 font-light">
+          We operate beyond simple real estate transactions. AURA represents an intimate network of architects, legal counsel, and private wealth managers representing the most significant properties in the world.
+        </p>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start gap-3">
+            <i data-lucide="shield-check" class="w-5 h-5 text-brand-accent shrink-0 mt-0.5"></i>
+            <span class="text-xs sm:text-sm text-zinc-700 font-medium">Off-Market Directory with complete client privacy guarantees.</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="globe" class="w-5 h-5 text-brand-accent shrink-0 mt-0.5"></i>
+            <span class="text-xs sm:text-sm text-zinc-700 font-medium">Global buyer syndicate spanning London, Dubai, Zurich, and Singapore.</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="award" class="w-5 h-5 text-brand-accent shrink-0 mt-0.5"></i>
+            <span class="text-xs sm:text-sm text-zinc-700 font-medium">Over $1.4B in successfully concluded closings since inception.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="contact" class="bg-zinc-950 text-white pt-16 pb-12 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div class="md:col-span-1">
+        <span class="text-2xl font-serif tracking-widest uppercase">AURA</span>
+        <p class="text-zinc-400 text-xs mt-3 leading-relaxed">
+          The premier advisory in luxury living, architectural residences, and high-yield estate acquisitions.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-4">Offices</h4>
+        <p class="text-xs text-zinc-400 mb-2">New York &bull; 745 5th Ave, NY 10151</p>
+        <p class="text-xs text-zinc-400 mb-2">London &bull; 14 Berkeley Square, Mayfair</p>
+        <p class="text-xs text-zinc-400">Miami &bull; 1111 Lincoln Rd, South Beach</p>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-4">Direct Inquiry</h4>
+        <p class="text-xs text-zinc-400 mb-2">Advisory: <a href="mailto:private@auraestates.com" class="hover:text-white underline">private@auraestates.com</a></p>
+        <p class="text-xs text-zinc-400 mb-2">Press: <a href="mailto:press@auraestates.com" class="hover:text-white underline">press@auraestates.com</a></p>
+        <p class="text-xs text-zinc-400">Tel: +1 (800) 555-0199</p>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-4">Newsletter</h4>
+        <p class="text-xs text-zinc-400 mb-3">Join our private quarterly dossier on luxury property valuation trends.</p>
+        <div class="flex">
+          <input type="email" placeholder="Your email" class="bg-zinc-900 border border-zinc-800 px-3 py-2 text-xs text-white focus:outline-none w-full" />
+          <button class="bg-brand-accent px-4 text-xs font-semibold uppercase hover:bg-white hover:text-black transition">Join</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 pt-6 border-t border-zinc-900 flex flex-col sm:flex-row justify-between items-center text-xs text-zinc-500">
+      <p>&copy; 2026 AURA Estates. All rights reserved. Equal Housing Opportunity.</p>
+      <!-- Nelson's signature credit (You can keep this or show clients you engineered it) -->
+      <p class="mt-2 sm:mt-0">Crafted with precision by Nelson Erege.</p>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT: DATA & INTERACTIONS ================= -->
+  <script>
+    /*
+      =======================================================
+      NELSON, CUSTOMIZE YOUR PROPERTIES HERE IN 1 MINUTE:
+      Swap photos, prices, tags, or addresses directly below!
+      =======================================================
+    */
+    const propertiesData = [
+      {
+        id: 1,
+        title: "The Tribeca Sky Villa",
+        location: "Manhattan, NY",
+        price: "$14,500,000",
+        beds: 4,
+        baths: 4.5,
+        sqft: "5,200",
+        category: "penthouse",
+        type: "Penthouse",
+        status: "For Sale",
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1170&auto=format&fit=crop"
+      },
+      {
+        id: 2,
+        title: "The Bel-Air Modernist Estate",
+        location: "Beverly Hills, CA",
+        price: "$28,900,000",
+        beds: 6,
+        baths: 8,
+        sqft: "11,400",
+        category: "sale",
+        type: "Villa",
+        status: "For Sale",
+        image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1171&auto=format&fit=crop"
+      },
+      {
+        id: 3,
+        title: "Biscayne Bay Waterfront Residence",
+        location: "Miami Beach, FL",
+        price: "$65,000 / mo",
+        beds: 5,
+        baths: 5,
+        sqft: "6,800",
+        category: "rent",
+        type: "Villa",
+        status: "For Lease",
+        image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1175&auto=format&fit=crop"
+      },
+      {
+        id: 4,
+        title: "Aspen Alpine Sanctuary",
+        location: "Aspen, CO",
+        price: "$19,250,000",
+        beds: 5,
+        baths: 6.5,
+        sqft: "7,900",
+        category: "sale",
+        type: "Villa",
+        status: "For Sale",
+        image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1170&auto=format&fit=crop"
+      },
+      {
+        id: 5,
+        title: "The Mayfair Heritage Duplex",
+        location: "London, UK",
+        price: "£45,000 / mo",
+        beds: 3,
+        baths: 3.5,
+        sqft: "3,800",
+        category: "rent",
+        type: "Penthouse",
+        status: "For Lease",
+        image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1153&auto=format&fit=crop"
+      },
+      {
+        id: 6,
+        title: "Pacific Palisades Ocean Vista",
+        location: "Beverly Hills, CA",
+        price: "$16,800,000",
+        beds: 5,
+        baths: 6,
+        sqft: "6,400",
+        category: "penthouse",
+        type: "Townhouse",
+        status: "For Sale",
+        image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1170&auto=format&fit=crop"
+      }
+    ];
+
+    // Function to render cards
+    const grid = document.getElementById("listingsGrid");
+
+    function renderProperties(items) {
+      grid.innerHTML = items.map(prop => `
+        <div class="bg-white border border-zinc-200 overflow-hidden group hover:shadow-xl transition-all duration-300">
+          <div class="relative overflow-hidden aspect-[4/3]">
+            <img 
+              src="${prop.image}" 
+              alt="${prop.title}" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            <span class="absolute top-4 left-4 bg-brand-charcoal text-white text-[10px] font-semibold uppercase tracking-widest px-3 py-1">
+              ${prop.status}
+            </span>
+          </div>
+
+          <div class="p-6">
+            <p class="text-xs font-semibold text-brand-accent tracking-wider uppercase mb-1">${prop.location}</p>
+            <h3 class="font-luxury text-xl text-brand-charcoal mb-2 font-normal">${prop.title}</h3>
+            <p class="text-lg font-medium text-brand-charcoal mb-4">${prop.price}</p>
+            
+            <div class="flex items-center justify-between pt-4 border-t border-zinc-100 text-zinc-500 text-xs">
+              <span class="flex items-center gap-1.5"><i data-lucide="bed" class="w-4 h-4"></i> ${prop.beds} Beds</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="bath" class="w-4 h-4"></i> ${prop.baths} Baths</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="maximize" class="w-4 h-4"></i> ${prop.sqft} Sq Ft</span>
+            </div>
+
+            <button onclick="alert('Inquiry received for ${prop.title}. A representative will contact you.')" class="mt-5 w-full py-2.5 border border-zinc-900 text-brand-charcoal text-xs uppercase tracking-widest font-semibold hover:bg-brand-charcoal hover:text-white transition">
+              Inquire Privately
+            </button>
+          </div>
+        </div>
+      `).join('');
+      
+      // Re-initialize Lucide Icons after DOM updates
+      lucide.createIcons();
+    }
+
+    // Initial render
+    renderProperties(propertiesData);
+
+    // Filter logic
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach(b => {
+          b.classList.remove("bg-brand-charcoal", "text-white", "active");
+          b.classList.add("bg-white", "text-zinc-700");
+        });
+        btn.classList.add("bg-brand-charcoal", "text-white", "active");
+        btn.classList.remove("bg-white", "text-zinc-700");
+
+        const category = btn.getAttribute("data-filter");
+        if (category === "all") {
+          renderProperties(propertiesData);
+        } else {
+          const filtered = propertiesData.filter(item => item.category === category);
+          renderProperties(filtered);
+        }
+      });
+    });
+
+    // Hero Search Form Logic
+    document.getElementById("heroSearchForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const loc = document.getElementById("locationSelect").value;
+      const type = document.getElementById("typeSelect").value;
+
+      const filtered = propertiesData.filter(item => {
+        const matchesLoc = loc === "all" || item.location === loc;
+        const matchesType = type === "all" || item.type === type;
+        return matchesLoc && matchesType;
+      });
+
+      renderProperties(filtered);
+      document.getElementById("properties").scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Valuation Form submission simulation
+    document.getElementById("valuationForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      document.getElementById("valuationSuccess").classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
